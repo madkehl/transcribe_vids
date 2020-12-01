@@ -8,7 +8,7 @@ import shutil
 
 def full_path_to_txt(movie_path, file_name, new_dir, split=True):
     """
-    :param movie_path: str representing link to mp4
+    :param movie_path: str representing link to mp4åßß
     :param file_name: str representing the desired name of final file
     :param new_dir: str containing subdirectory name for raw_results
     :param split: whether or not the file has to be split to get around API limitations
