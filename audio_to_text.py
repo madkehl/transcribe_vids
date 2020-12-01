@@ -31,7 +31,10 @@ def aud_to_text_ls(count):
     for i in sub_files:
         path = './trial/' + str(i) + '_trial.wav'
         result = aud_to_text(path)
-        full_transcript = full_transcript + result + ' '
+        try:
+            full_transcript = full_transcript + result + ' '
+        except TypeError:
+            pass
         # trying to throw the api off
         time.sleep(5)
 
