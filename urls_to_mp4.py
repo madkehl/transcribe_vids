@@ -1,6 +1,8 @@
 import urllib.request
+import urllib.error
 import os
 from datetime import datetime
+import time
 
 
 def urls_to_mp4():
@@ -20,6 +22,12 @@ def urls_to_mp4():
 
     for i, line in enumerate(lines):
         file_name = str(i) + '.mp4'
-        urllib.request.urlretrieve(line, name + '/' + file_name)
+        try:
+            urllib.request.urlretrieve(line, name + '/' + file_name)
+        except urllib.error.HTTPError:
+            print('THE FOLLOWING URL IS INVALID')
+            print(line)
+            print()
+        time.sleep(2)
 
     return name

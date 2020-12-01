@@ -19,7 +19,7 @@ def full_path_to_txt(movie_path, file_name, new_dir, split=True):
         os.mkdir('./raw results/' + new_dir[2:])
     except FileExistsError:
         pass
-    current_vid = './raw results/' + new_dir[:2] + file_name
+    current_vid = './raw results/' + new_dir[:2] + '/' + file_name
     os.mkdir('./trial')
     clip.audio.write_audiofile(r'./trial/trial.wav')
 
