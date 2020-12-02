@@ -1,0 +1,22 @@
+certifi==2020.11.8
+chardet==3.0.4
+decorator==4.4.2
+idna==2.10
+imageio==2.9.0
+imageio-ffmpeg==0.4.2
+mkl-fft==1.2.0
+mkl-random==1.1.1
+mkl-service==2.3.0
+moviepy==1.0.3
+numpy==1.18.1
+pandas @ file:///opt/concourse/worker/volumes/live/f615845e-c5fe-4fc8-4a20-aedb5c26671e/volume/pandas_1601567264760/work
+Pillow==8.0.1
+proglog==0.1.9
+pydub==0.24.1
+python-dateutil==2.8.1
+pytz @ file:///tmp/build/80754af9/pytz_1606604771399/work
+requests==2.25.0
+six @ file:///opt/concourse/worker/volumes/live/5b31cb27-1e37-4ca5-6e9f-86246eb206d2/volume/six_1605205320872/work
+SpeechRecognition==3.8.1
+tqdm==4.54.0
+urllib3==1.26.2
