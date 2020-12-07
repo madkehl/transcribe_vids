@@ -45,7 +45,7 @@ def main():
     :return: nothing, fills up folder using full_path_to_text
     """
     use_urls = input('Use url.txt? (True/False):')
-    if use_urls:
+    if use_urls is True:
         name = urls_to_mp4()
     else:
         name = './data'
