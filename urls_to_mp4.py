@@ -3,6 +3,7 @@ import urllib.error
 import os
 from datetime import datetime
 import time
+import requests
 
 
 def urls_to_mp4():
@@ -25,9 +26,23 @@ def urls_to_mp4():
         try:
             urllib.request.urlretrieve(line, name + '/' + file_name)
         except urllib.error.HTTPError:
-            print('THE FOLLOWING URL IS INVALID')
-            print(line)
-            print()
+            # try:
+            r = requests.get(line, stream=True)
+            if str(r) == '<Response [403]>':
+                print('You do not have permissions to access this URL (403)')
+            else:
+                with open(name + '/' + file_name, 'wb') as outfile:
+                    for chunk in r.iter_content(chunk_size=1024):
+                        # writing one chunk at a time to mp4 file
+                        if chunk:
+                            outfile.write(chunk)
+        # except:
+               # print('THE FOLLOWING URL IS INVALID')
+               # print(line)
+               # print()
+
+      #
+
         time.sleep(2)
 
     return name
