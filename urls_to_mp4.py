@@ -26,7 +26,6 @@ def urls_to_mp4():
         try:
             urllib.request.urlretrieve(line, name + '/' + file_name)
         except urllib.error.HTTPError:
-            # try:
             r = requests.get(line, stream=True)
             if str(r) == '<Response [403]>':
                 print('You do not have permissions to access this URL (403)')
@@ -36,12 +35,6 @@ def urls_to_mp4():
                         # writing one chunk at a time to mp4 file
                         if chunk:
                             outfile.write(chunk)
-        # except:
-               # print('THE FOLLOWING URL IS INVALID')
-               # print(line)
-               # print()
-
-      #
 
         time.sleep(2)
 
